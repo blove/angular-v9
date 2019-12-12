@@ -1,0 +1,22 @@
+<div swrActions>
+  <button mat-button swrBtnGrow (click)="onTranslate()">
+    Translate
+  </button>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel
+    *ngFor="let person of people"
+    (afterExpand)="onAfterExpand(person)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ person.name | wookiee: translateToWookiee }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <swr-person-details [person]="person"></swr-person-details>
+    <swr-person-films
+      [films]="filmsByPerson.get(person) | async"
+    ></swr-person-films>
+  </mat-expansion-panel>
+</mat-accordion>
