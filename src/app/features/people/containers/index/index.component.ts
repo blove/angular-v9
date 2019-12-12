@@ -1,18 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Person, PersonService } from '../../../../core';
+import { Component } from '@angular/core';
+import { Subject, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { PersonService } from '../../../../core';
 
 @Component({
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent {
+  /** Search query. */
+  q = new Subject<string>();
+
   /** The people of strwrs. */
-  people: Observable<Array<Person>>;
+  people = combineLatest(this.personService.getAll(), this.q).pipe(
+    map(([people, q]) =>
+      people.filter(person => person.name.match(new RegExp(q, 'i')))
+    )
+  );
 
   constructor(private personService: PersonService) {}
 
-  ngOnInit() {
-    this.people = this.personService.getAll();
+  onQChange(q): void {
+    this.q.next(q);
   }
 }
