@@ -1,5 +1,11 @@
 <div swrActions>
-  <button mat-button swrBtnGrow (click)="onTranslate()">
+  <!-- v9 migration: do not mutate templateRef elements -->
+  <button
+    mat-button
+    swrBtnGrow
+    #translateBtn
+    (click)="translateBtn.translateToWookiee = !translateBtn.translateToWookiee"
+  >
     Translate
   </button>
 </div>
@@ -11,7 +17,7 @@
   >
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ person.name | wookiee: translateToWookiee }}
+        {{ person.name | wookiee: translateBtn.translateToWookiee }}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <swr-person-details [person]="person"></swr-person-details>

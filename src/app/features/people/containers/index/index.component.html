@@ -1,4 +1,7 @@
 <div swrContent>
   <h1>The people of StrWrs</h1>
+  <swr-person-search-form
+    (qChange)="onQChange($event)"
+  ></swr-person-search-form>
   <swr-people-list [people]="people | async"></swr-people-list>
 </div>
