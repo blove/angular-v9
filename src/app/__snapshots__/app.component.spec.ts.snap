@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent should render html 1`] = `
+<div
+  id="root1"
+  ng-version="8.2.14"
+>
+  <mat-sidenav-container
+    class="sidenav-container mat-drawer-container mat-sidenav-container"
+  >
+    
+    <div
+      class="mat-drawer-backdrop ng-star-inserted"
+    />
+    <div
+      aria-hidden="true"
+      class="cdk-visually-hidden cdk-focus-trap-anchor"
+    />
+    <mat-sidenav
+      class="sidenav mat-drawer mat-sidenav ng-tns-c7-0 ng-trigger ng-trigger-transform mat-drawer-over mat-sidenav-fixed ng-star-inserted"
+      fixedinviewport="true"
+      ng-reflect-fixed-in-viewport="true"
+      style="top:0px;bottom:0px;box-shadow:none;visibility:hidden;0:top;1:bottom;2:box-shadow;3:visibility;"
+      tabindex="-1"
+    >
+      <div
+        class="mat-drawer-inner-container"
+      >
+        <mat-toolbar
+          class="mat-toolbar mat-toolbar-single-row"
+        >
+          Menu
+        </mat-toolbar>
+        <mat-nav-list
+          class="mat-nav-list mat-list-base"
+          role="navigation"
+        >
+          <a
+            class="mat-list-item"
+            href="/people"
+            mat-list-item=""
+            ng-reflect-router-link="/people"
+            routerlink="/people"
+          >
+            <div
+              class="mat-list-item-content"
+            >
+              <div
+                class="mat-list-item-ripple mat-ripple"
+                mat-ripple=""
+                ng-reflect-disabled="false"
+                ng-reflect-trigger="https://github.com/people"
+              />
+              <div
+                class="mat-list-text"
+              />
+              People
+            </div>
+          </a>
+          <a
+            class="mat-list-item"
+            href="/mos-eisley/cantina"
+            mat-list-item=""
+            ng-reflect-router-link="/mos-eisley/cantina"
+            routerlink="/mos-eisley/cantina"
+          >
+            <div
+              class="mat-list-item-content"
+            >
+              <div
+                class="mat-list-item-ripple mat-ripple"
+                mat-ripple=""
+                ng-reflect-disabled="false"
+                ng-reflect-trigger="https://github.com/mos-eisley/"
+              />
+              <div
+                class="mat-list-text"
+              />
+              Mos Eisley Cantina
+            </div>
+          </a>
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+    <div
+      aria-hidden="true"
+      class="cdk-visually-hidden cdk-focus-trap-anchor"
+    />
+    <mat-sidenav-content
+      class="sidenav-content mat-drawer-content mat-sidenav-content"
+    >
+      <mat-toolbar
+        class="mat-toolbar mat-primary mat-toolbar-single-row"
+        color="primary"
+        ng-reflect-color="primary"
+      >
+        <button
+          aria-label="Toggle sidenav"
+          class="mat-icon-button mat-button-base _mat-animation-noopable"
+          mat-icon-button=""
+          type="button"
+        >
+          <span
+            class="mat-button-wrapper"
+          >
+            <mat-icon
+              aria-hidden="true"
+              aria-label="Side nav toggle icon"
+              class="mat-icon notranslate material-icons mat-icon-no-color"
+              role="img"
+            >
+              menu
+            </mat-icon>
+          </span>
+          <div
+            class="mat-button-ripple mat-ripple mat-button-ripple-round"
+            matripple=""
+            ng-reflect-centered="true"
+            ng-reflect-disabled="false"
+            ng-reflect-trigger="[object HTMLButtonElement]"
+          />
+          <div
+            class="mat-button-focus-overlay"
+          />
+        </button>
+        <span>
+          StrWrs
+        </span>
+      </mat-toolbar>
+      <div
+        class="content"
+      >
+        <router-outlet />
+      </div>
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+</div>
+`;
