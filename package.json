@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently --prefix-colors white.bgRed,white.bgBlue --names angular,json-server --kill-others \"npm run serve:proxy\" \"npm run serve:server\"",
+    "start:de": "concurrently --prefix-colors white.bgRed,white.bgBlue --names angular,json-server --kill-others \"npm run serve:proxy:de\" \"npm run serve:server\"",
     "serve": "ng serve --source-map",
     "serve:proxy": "ng serve --source-map --proxy-config proxy.conf.json",
+    "serve:proxy:de": "ng serve --source-map --proxy-config proxy.conf.json --configuration=de",
     "serve:server": "json-server --watch data/data.json --routes data/routes.json",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "build:de": "ng build --prod --configuration=de",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

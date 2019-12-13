@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="cc0ed1ad8b7110851e22b98c4e195ee85f347830" datatype="html">
+        <source>People</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Link to people route</note>
+        <note priority="1" from="meaning">route: people</note>
+      </trans-unit>
+      <trans-unit id="efd2dbc5c05dd74dcd5d170f78d1811289ae08f5" datatype="html">
+        <source>Mos Eisley Cantina</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Link the Mos Eisley Cantina route</note>
+        <note priority="1" from="meaning">route: cantina</note>
+      </trans-unit>
+      <trans-unit id="6ff31b4049949c18107ca15ff0552d83a819dde3" datatype="html">
+        <source>
+    Translate
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/people/presenters/people-list/people-list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="45d484ec895d9ab139a049d5358f5578f8d8ea0b" datatype="html">
+        <source>
+        Films
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/people/presenters/people-list/people-list.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8cf14138bb1a2e4eb8dc5a58e111caef180b44b4" datatype="html">
+        <source>
+        Home Planet
+      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/people/presenters/people-list/people-list.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d9a8f210d744d98462b7c140b0913888ed498b09" datatype="html">
+        <source>Films</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/people/presenters/person-films/person-films.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

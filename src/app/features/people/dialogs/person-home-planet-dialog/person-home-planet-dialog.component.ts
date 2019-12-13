@@ -11,7 +11,7 @@ export class PersonHomePlanetDialogComponent {
   planet = this.planetService.getPlanetForPerson(this.data.person);
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) private readonly data: { person: Person },
+    @Inject(MAT_DIALOG_DATA) public data: { person: Person },
     private readonly planetService: PlanetService
   ) {}
 }

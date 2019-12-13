@@ -13,7 +13,7 @@ export class PersonFilmsDialogComponent {
   films = this.filmService.getFilmsByCharacter(this.data.person);
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) private readonly data: { person: Person },
+    @Inject(MAT_DIALOG_DATA) public data: { person: Person },
     private readonly filmService: FilmService
   ) {}
 }

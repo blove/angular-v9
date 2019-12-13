@@ -2,8 +2,18 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/people">People</a>
-      <a mat-list-item routerLink="/mos-eisley/cantina">Mos Eisley Cantina</a>
+      <a
+        mat-list-item
+        i18n="route: people|Link to people route"
+        routerLink="/people"
+        >People</a
+      >
+      <a
+        mat-list-item
+        i18n="route: cantina|Link the Mos Eisley Cantina route"
+        routerLink="/mos-eisley/cantina"
+        >Mos Eisley Cantina</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
