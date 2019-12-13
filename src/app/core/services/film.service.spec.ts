@@ -13,7 +13,7 @@ describe('FilmService', () => {
   );
 
   it('should be created', () => {
-    service = TestBed.get(FilmService);
+    service = TestBed.inject<FilmService>(FilmService);
     expect(service).toBeTruthy();
   });
 });

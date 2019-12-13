@@ -3,7 +3,7 @@
 exports[`AppComponent should render html 1`] = `
 <div
   id="root1"
-  ng-version="8.2.14"
+  ng-version="9.0.0-rc.6"
 >
   <mat-sidenav-container
     class="sidenav-container mat-drawer-container mat-sidenav-container"

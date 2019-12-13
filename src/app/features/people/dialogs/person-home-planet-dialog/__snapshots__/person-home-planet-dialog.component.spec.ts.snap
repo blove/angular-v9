@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonHomePlanetDialogComponent should render html 1`] = `
+<div
+  id="root1"
+  ng-version="9.0.0-rc.6"
+>
+  <h1
+    class="mat-dialog-title"
+    id="mat-dialog-title-1"
+    mat-dialog-title=""
+  >
+    Luke Skywalker: Home Planet
+  </h1>
+  <mat-dialog-content
+    class="mat-dialog-content"
+  >
+    <swr-planet
+      ng-reflect-planet="[object Object]"
+    >
+      <h3>
+        Tatooine
+      </h3>
+      <ul>
+        <li>
+          Climate: arid
+        </li>
+        <li>
+          Diameter: 10465
+        </li>
+        <li>
+          Rotation Period: 23
+        </li>
+        <li>
+          Created: Dec 9, 2014
+        </li>
+        <li>
+          Terrain: desert
+        </li>
+        <li>
+          Gravity: 1 standard
+        </li>
+        <li>
+          Orbital Period: 304
+        </li>
+        <li>
+          Population: 200000
+        </li>
+      </ul>
+    </swr-planet>
+  </mat-dialog-content>
+  <mat-dialog-actions
+    align="end"
+    class="mat-dialog-actions"
+  >
+    <button
+      class="mat-button mat-button-base _mat-animation-noopable"
+      mat-button=""
+      mat-dialog-close=""
+      ng-reflect-dialog-result=""
+      type="button"
+    >
+      <span
+        class="mat-button-wrapper"
+      >
+        Close
+      </span>
+      <div
+        class="mat-button-ripple mat-ripple"
+        matripple=""
+        ng-reflect-centered="false"
+        ng-reflect-disabled="false"
+        ng-reflect-trigger="[object HTMLButtonElement]"
+      />
+      <div
+        class="mat-button-focus-overlay"
+      />
+    </button>
+  </mat-dialog-actions>
+</div>
+`;

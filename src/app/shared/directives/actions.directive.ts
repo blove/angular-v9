@@ -1,26 +1,23 @@
 import {
   AfterContentInit,
-  ContentChild,
   Directive,
   ElementRef,
-  Renderer
+  Renderer2
 } from '@angular/core';
 
 @Directive({
   selector: '[swrActions]'
 })
 export class ActionsDirective implements AfterContentInit {
-  // [TODO]: Angular v9 ContentChild will not return host element!!
-  @ContentChild(ActionsDirective, { static: true, read: ElementRef })
-  selfElementRef: ElementRef;
-
-  constructor(private renderer: Renderer) {}
+  constructor(
+    private readonly elementRef: ElementRef,
+    private readonly renderer: Renderer2
+  ) {}
 
   ngAfterContentInit() {
-    const el = this.selfElementRef.nativeElement;
-    // [TODO]: Angular v9: Renderer is deprecated!!
-    this.renderer.setElementStyle(el, 'display', 'flex');
-    this.renderer.setElementStyle(el, 'flexDirection', 'row');
-    this.renderer.setElementStyle(el, 'justifyContent', 'flex-end');
+    const el = this.elementRef.nativeElement;
+    this.renderer.setStyle(el, 'display', 'flex');
+    this.renderer.setStyle(el, 'flexDirection', 'row');
+    this.renderer.setStyle(el, 'justifyContent', 'flex-end');
   }
 }

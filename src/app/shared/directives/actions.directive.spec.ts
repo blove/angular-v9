@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, DebugElement, PLATFORM_ID, Renderer } from '@angular/core';
+import { Component, DebugElement, PLATFORM_ID } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
@@ -21,7 +21,7 @@ describe('ActionsDirective', () => {
     TestBed.configureTestingModule({
       declarations: [ActionsDirective, TestActionsDirectiveComponent],
       imports: [CommonModule],
-      providers: [{ provide: PLATFORM_ID, useValue: 'browser' }, Renderer]
+      providers: [{ provide: PLATFORM_ID, useValue: 'browser' }]
     });
 
     fixture = TestBed.createComponent(TestActionsDirectiveComponent);

@@ -13,7 +13,7 @@ describe('PersonService', () => {
   );
 
   it('should be created', () => {
-    service = TestBed.get(PersonService);
+    service = TestBed.inject<PersonService>(PersonService);
     expect(service).toBeTruthy();
   });
 });

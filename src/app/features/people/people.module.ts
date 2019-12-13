@@ -25,10 +25,6 @@ import { PlanetComponent } from './presenters/planet/planet.component';
     PersonSearchFormComponent,
     PlanetComponent
   ],
-  entryComponents: [
-    PersonFilmsDialogComponent,
-    PersonHomePlanetDialogComponent
-  ],
   imports: [
     CommonModule,
     FormsModule,
