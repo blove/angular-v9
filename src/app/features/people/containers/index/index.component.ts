@@ -15,7 +15,7 @@ export class IndexComponent {
   /** The people of strwrs. */
   people = combineLatest(this.personService.getAll(), this.q).pipe(
     map(([people, q]) =>
-      people.filter(person => person.name.match(new RegExp(q, 'i')))
+      people.filter(person => person.fields.name.match(new RegExp(q, 'i')))
     )
   );
 

@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material';
 
-import { Film, FilmService, Person } from '../../../../core';
+import { Person } from '../../../../core';
+import { PersonFilmsDialogComponent } from '../../dialogs/person-films-dialog/person-films-dialog.component';
+import { PersonHomePlanetDialogComponent } from '../../dialogs/person-home-planet-dialog/person-home-planet-dialog.component';
 
 @Component({
   selector: 'swr-people-list',
@@ -12,20 +14,30 @@ export class PeopleListComponent {
   /** The people to display. */
   @Input() people: Person[];
 
-  /** Associated films by person. */
-  filmsByPerson = new Map<Person, Observable<Array<Film>>>();
-
   /** True if the content should be translated for Chewbaka */
   translateToWookiee = false;
 
-  constructor(private readonly filmService: FilmService) {}
-
-  onAfterExpand(person: Person): void {
-    const films = this.filmService.getFilmsByCharacter(person);
-    this.filmsByPerson.set(person, films);
-  }
+  constructor(private readonly matDialog: MatDialog) {}
 
   onTranslate(): void {
     this.translateToWookiee = !this.translateToWookiee;
+  }
+
+  openFilmsDialogForPerson(person: Person): void {
+    this.matDialog.open(PersonFilmsDialogComponent, {
+      data: {
+        person
+      },
+      width: '80%'
+    });
+  }
+
+  openHomePlanetDialogForPerson(person: Person): void {
+    this.matDialog.open(PersonHomePlanetDialogComponent, {
+      data: {
+        person
+      },
+      width: '80%'
+    });
   }
 }

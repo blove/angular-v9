@@ -42,6 +42,7 @@ describe('AppComponent', () => {
 
   it('should render html', async(() => {
     const compiled = fixture.debugElement.nativeElement;
+    // @ts-ignore
     expect(compiled).toMatchSnapshot();
   }));
 });

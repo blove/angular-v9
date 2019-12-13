@@ -1,3 +1,14 @@
 [swrActions] {
   margin: 20px 0;
 }
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px 0;
+
+  button + button {
+    margin-left: 10px;
+  }
+}

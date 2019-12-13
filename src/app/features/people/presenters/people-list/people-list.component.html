@@ -11,18 +11,23 @@
 </div>
 
 <mat-accordion>
-  <mat-expansion-panel
-    *ngFor="let person of people"
-    (afterExpand)="onAfterExpand(person)"
-  >
+  <mat-expansion-panel *ngFor="let person of people">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ person.name | wookiee: translateBtn.translateToWookiee }}
+        {{ person.fields.name | wookiee: translateBtn.translateToWookiee }}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <swr-person-details [person]="person"></swr-person-details>
-    <swr-person-films
-      [films]="filmsByPerson.get(person) | async"
-    ></swr-person-films>
+    <div class="actions">
+      <button mat-stroked-button (click)="openFilmsDialogForPerson(person)">
+        Films
+      </button>
+      <button
+        mat-stroked-button
+        (click)="openHomePlanetDialogForPerson(person)"
+      >
+        Home Planet
+      </button>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

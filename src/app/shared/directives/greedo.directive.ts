@@ -1,9 +1,13 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
-  OnChanges,
   ElementRef,
-  SimpleChanges,
-  Input
+  Inject,
+  Input,
+  OnChanges,
+  PLATFORM_ID,
+  Renderer2,
+  SimpleChanges
 } from '@angular/core';
 import { interval } from 'rxjs';
 import { first } from 'rxjs/operators';
@@ -15,9 +19,19 @@ export class GreedoDirective implements OnChanges {
   /** The directive data. */
   @Input('swrGreedo') fire: boolean;
 
-  constructor(private readonly elementRef: ElementRef) {}
+  constructor(
+    private readonly elementRef: ElementRef,
+    // tslint:disable-next-line:ban-types
+    @Inject(PLATFORM_ID) private readonly platformId: Object,
+    private readonly renderer: Renderer2
+  ) {}
 
   ngOnChanges(simpleChanges: SimpleChanges) {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const el = this.elementRef.nativeElement as HTMLImageElement;
     let src: string;
 
     // set the image source value
@@ -27,14 +41,9 @@ export class GreedoDirective implements OnChanges {
       src = '/assets/img/greedo.png';
     }
 
-    // get the native element from the injected ElementRef instance
-    const el = this.elementRef.nativeElement as HTMLImageElement;
-
     // after 500 millisconds update the image src attribute
     interval(500)
       .pipe(first())
-      .subscribe(() => {
-        el.src = src;
-      });
+      .subscribe(() => this.renderer.setProperty(el, 'src', src));
   }
 }

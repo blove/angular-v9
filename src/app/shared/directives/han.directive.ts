@@ -1,9 +1,13 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
+  ElementRef,
+  Inject,
   Input,
   OnChanges,
-  SimpleChanges,
-  ElementRef
+  PLATFORM_ID,
+  Renderer2,
+  SimpleChanges
 } from '@angular/core';
 
 @Directive({
@@ -13,22 +17,30 @@ export class HanDirective implements OnChanges {
   /** The directive data. */
   @Input('swrHan') fire: boolean;
 
-  constructor(private readonly elementRef: ElementRef) {}
+  constructor(
+    private readonly elementRef: ElementRef,
+    // tslint:disable-next-line:ban-types
+    @Inject(PLATFORM_ID) private readonly platformId: Object,
+    private readonly renderer: Renderer2
+  ) {}
 
   ngOnChanges(simpleChanges: SimpleChanges) {
-    let src: string;
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // get the native element from the injected ElementRef instance
+    const el = this.elementRef.nativeElement as HTMLImageElement;
 
     // set the image source value
+    let src: string;
     if (simpleChanges.fire.currentValue) {
       src = '/assets/img/han-solo-fire.png';
     } else {
       src = '/assets/img/han-solo.png';
     }
 
-    // get the native element from the injected ElementRef instance
-    const el = this.elementRef.nativeElement as HTMLImageElement;
-
     // set the updated image src attribute
-    el.src = src;
+    this.renderer.setProperty(el, 'src', src);
   }
 }

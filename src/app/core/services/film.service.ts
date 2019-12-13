@@ -1,35 +1,24 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
-import films from '../data/films.json';
+import { Observable } from 'rxjs';
+
+import { environment } from '../../../environments/environment';
 import { Film, Person } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmService {
+  constructor(private readonly httpClient: HttpClient) {}
+
   getAll(): Observable<Array<Film>> {
-    return of(films).pipe(
-      map(data =>
-        data.map(item => ({
-          ...item.fields,
-          pk: item.pk
-        }))
-      )
-    );
+    return this.httpClient.get<Film[]>(`${environment}/films`);
+
   }
 
   getFilmsByCharacter(character: Person): Observable<Array<Film>> {
-    return of(films).pipe(
-      map(data =>
-        data.map(item => ({
-          ...item.fields,
-          pk: item.pk
-        }))
-      ),
-      map(films =>
-        films.filter(film => film.characters.indexOf(character.pk) > -1)
-      )
+    return this.httpClient.get<Film[]>(
+      `${environment.apiUrl}/films?fields.characters_like=${character.pk}`
     );
   }
 }
