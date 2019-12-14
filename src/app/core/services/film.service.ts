@@ -13,7 +13,6 @@ export class FilmService {
 
   getAll(): Observable<Array<Film>> {
     return this.httpClient.get<Film[]>(`${environment}/films`);
-
   }
 
   getFilmsByCharacter(character: Person): Observable<Array<Film>> {

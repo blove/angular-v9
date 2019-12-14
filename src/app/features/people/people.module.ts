@@ -12,7 +12,6 @@ import { PeopleListComponent } from './presenters/people-list/people-list.compon
 import { PersonDetailsComponent } from './presenters/person-details/person-details.component';
 import { PersonFilmsComponent } from './presenters/person-films/person-films.component';
 import { PersonSearchFormComponent } from './presenters/person-search-form/person-search-form.component';
-import { PlanetComponent } from './presenters/planet/planet.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { PlanetComponent } from './presenters/planet/planet.component';
     PersonFilmsComponent,
     PersonFilmsDialogComponent,
     PersonHomePlanetDialogComponent,
-    PersonSearchFormComponent,
-    PlanetComponent
+    PersonSearchFormComponent
   ],
   imports: [
     CommonModule,

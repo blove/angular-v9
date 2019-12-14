@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Planet } from 'src/app/core';
+
+import { Planet } from '../../../../core';
 
 @Component({
   selector: 'swr-planet',
