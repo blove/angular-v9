@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &.rotate {
+    transform: rotate(2deg);
+
+    &:nth-child(odd) {
+      transform: rotate(-2deg);
+    }
+  }
+
+  .avatar {
+    background-image: url('/assets/avatar/owan.jpg');
+    background-size: cover;
+  }
+}

@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MosEisleyRoutingModule } from './mos-eisley-routing.module';
-import { CantinaComponent } from './containers/cantina/cantina.component';
+import { NgModule } from '@angular/core';
 import { MaterialModule } from 'src/app/material';
 import { SharedModule } from 'src/app/shared';
+
+import { CantinaComponent } from './containers/cantina/cantina.component';
+import { MosEisleyRoutingModule } from './mos-eisley-routing.module';
 
 @NgModule({
   declarations: [CantinaComponent],

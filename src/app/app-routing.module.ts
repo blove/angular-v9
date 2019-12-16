@@ -12,13 +12,22 @@ const routes: Routes = [
     path: 'mos-eisley',
     loadChildren: () =>
       import('./features/mos-eisley/mos-eisley.module').then(
-        m => m.MosEisleyModule
+        ({ MosEisleyModule }) => MosEisleyModule
       )
   },
   {
     path: 'people',
     loadChildren: () =>
-      import('./features/people/people.module').then(m => m.PeopleModule)
+      import('./features/people/people.module').then(
+        ({ PeopleModule }) => PeopleModule
+      )
+  },
+  {
+    path: 'recon',
+    loadChildren: () =>
+      import('./features/recon/recon.module').then(
+        ({ ReconModule }) => ReconModule
+      )
   },
   {
     path: '**',

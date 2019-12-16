@@ -1,0 +1,25 @@
+<div swrContent>
+  <h1>Recon: Stormtroopers</h1>
+  <div class="container" [class]="classes.join(' ')">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="avatar"></div>
+        <mat-card-title>@obiwan</mat-card-title>
+        <mat-card-subtitle>Date: 2002-05-15</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="/assets/recon/stormtroopers.jpg"
+        alt="Stormtroopers in Docking Bay 327"
+      />
+      <mat-card-content>
+        <p>
+          Stormtroopers located in Docking Bay 327.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onRotate()">toggle rotate</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
