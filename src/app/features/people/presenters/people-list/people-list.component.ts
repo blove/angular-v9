@@ -14,6 +14,8 @@ export class PeopleListComponent {
   /** The people to display. */
   @Input() people: Person[];
 
+  fakePerson = {};
+
   /** True if the content should be translated for Chewbaka */
   translateToWookiee = false;
 

@@ -12,7 +12,7 @@
         {{ person.fields.name | wookiee: translateToWookiee }}
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <swr-person-details [person]="person"></swr-person-details>
+    <swr-person-details #details [person]="fakePerson"></swr-person-details>
     <div class="actions">
       <button
         mat-stroked-button
@@ -21,11 +21,7 @@
       >
         Films
       </button>
-      <button
-        mat-stroked-button
-        i18n
-        (click)="openHomePlanetDialogForPerson(person)"
-      >
+      <button mat-stroked-button i18n (click)="details.src = ''">
         Home Planet
       </button>
     </div>
